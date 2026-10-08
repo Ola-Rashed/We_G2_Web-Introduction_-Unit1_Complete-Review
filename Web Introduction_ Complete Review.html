@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Web Introduction: Complete Review</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1c2333;--bg:#f4f6fb;--card:#fff;--line:#d9deea;--html:#c2410c;--css:#2b4fd8;--code:#1b2236;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#e8ecf6;--bg:#12151f;--card:#1b2030;--line:#2e3650;--html:#ff8a5c;--css:#8ba4ff;--code:#0c0f18}}
+:root[data-theme="dark"]{--ink:#e8ecf6;--bg:#12151f;--card:#1b2030;--line:#2e3650;--html:#ff8a5c;--css:#8ba4ff;--code:#0c0f18}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 Cairo,"Segoe UI",Tahoma,sans-serif}
+header{max-width:960px;margin:0 auto;padding:28px 16px 8px}
+h1{font-size:clamp(26px,5vw,40px);margin:0 0 4px;line-height:1.3}
+header p{margin:4px 0;opacity:.8}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:8px;overflow-x:auto;padding:8px 16px}
+nav a{white-space:nowrap;padding:2px 12px;border:1px solid var(--line);border-radius:20px;color:var(--ink);text-decoration:none;background:var(--card)}
+nav a:focus-visible,summary:focus-visible,.a:focus-visible{outline:3px solid var(--css);outline-offset:2px}
+main{max-width:960px;margin:0 auto;padding:0 16px 40px}
+.sec{margin-top:36px;border-inline-start:6px solid var(--a);padding-inline-start:14px}
+.sec h2{margin:0 0 6px;color:var(--a);font-size:26px}
+.pts{padding-inline-start:20px;margin:0 0 14px}
+code{direction:ltr;unicode-bidi:isolate;background:var(--line);padding:0 5px;border-radius:4px;font-size:.9em}
+.ex{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px;margin:14px 0}
+.ex h3{margin:0 0 8px;font-size:18px}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+pre{margin:0;background:var(--code);color:#e6e9f2;padding:12px;border-radius:8px;overflow:auto;font:13px/1.6 "JetBrains Mono",Consolas,monospace;text-align:left;white-space:pre}
+pre .t{color:#ff9d6f;font-style:normal}pre .s{color:#9be28f;font-style:normal}
+.res{position:relative;border:2px dashed var(--a);border-radius:8px;min-height:60px;overflow:auto}
+.res::before{content:"Result";position:absolute;top:0;inset-inline-end:0;background:var(--a);color:#fff;font-size:12px;padding:0 8px;border-end-start-radius:8px;z-index:1}
+.n{margin:8px 0 0;font-size:14px;opacity:.85}
+details{margin-top:12px}summary{cursor:pointer;font-weight:700;color:var(--a)}
+.k{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:6px;margin-top:8px}
+.k div{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:14px;line-height:1.5;direction:ltr;text-align:left}
+.qa{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:6px;margin-top:10px}
+.qa div{display:flex;justify-content:space-between;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:14px;direction:ltr;text-align:left}
+.a{filter:blur(6px);cursor:pointer;color:var(--css);font-weight:700;transition:filter .2s;text-align:left}.a.on{filter:none}
+@media(max-width:700px){.g{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.a{transition:none}}
+</style>
+</head>
+<body>
+<header>
+<h1>Web Introduction: Complete Review</h1>
+<p>Grade 2 · Web &amp; Software Development · Term 1, 2026 (Lessons 1 to 5)</p>
+<p>Every example shows the code on the left and its real result on the right (rendered live from that same code).</p>
+</header>
+<nav id="nav"></nav>
+<main id="app"></main>
+<script>
+const S=[
+{id:'l1',t:'Lesson 1: The Web and HTML',a:'html',
+p:['How the web works: the browser requests a page, the server replies with `HTML` files (like a customer, a waiter and a kitchen).',
+'`HTML` is a markup language that describes the structure of a page. It is not a programming language.',
+'Planning stages: goals and audience, competitor research, Sitemap and User Flow, content, Wireframe and Branding, Domain, Hosting and CMS, testing and maintenance.',
+'Structure: `<!DOCTYPE html>`, then `<html>` containing `<head>` (title, meta charset) and `<body>` (the visible content).',
+'Self-closing tags: `<br>` `<hr>` `<img>`. For images, `src` is the file path and `alt` is the text description.',
+'Lists: `ul` for bullets, `ol` for numbers (type: 1, a, A, i, I), and `dl` + `dt` + `dd` for terms and definitions.',
+'Links: `href` is the destination, `target="_blank"` opens a new tab, and `id` with `#` creates a link inside the same page.'],
+e:[
+{t:'HTML page structure',h:`<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>My Page</title>
+ </head>
+ <body>
+  <h1>Hello!</h1>
+  <p>First page.</p>
+ </body>
+</html>`,r:'<h1>Hello!</h1><p>First page.</p>',n:'The browser tab shows "My Page" (the title), and only what is inside body appears on the page.'},
+{t:'Headings, paragraphs and separators',h:`<h1>Heading 1</h1>
+<h3>Heading 3</h3>
+<h6>Heading 6</h6>
+<p>Line one<br>Line two</p>
+<hr width="50%" color="red" size="3">`},
+{t:'Links and images',h:`<a href="https://example.com" target="_blank" title="Open site">Visit site</a>
+<br>
+<img src="cat.jpg" alt="A small cat" width="120" height="50">`,n:'The image file does not exist, so the alt text is shown instead. That is why alt matters for accessibility.'},
+{t:'Lists: ul, ol and dl',h:`<ul type="square">
+ <li>Soup</li><li>Salad</li>
+</ul>
+<ol type="A">
+ <li>First</li><li>Second</li>
+</ol>
+<dl>
+ <dt>HTML</dt><dd>Page structure</dd>
+</dl>`},
+{t:'Internal link',h:`<a href="#contact">Jump to Contact</a>
+<h2 id="contact">Contact</h2>`,n:'Clicking the link scrolls to the element with id="contact" on the same page.'},
+{t:'Text formatting and comments',h:`<p><b>Bold</b> <i>Italic</i> <u>Under</u>
+<mark>Mark</mark> E=mc<sup>2</sup>
+H<sub>2</sub>O <del>Oops</del></p>
+<\!-- comment: browser ignores me -->`}
+],
+k:['Browser|Software to view websites','Server|Stores and delivers site files','Code Editor|Writes code (VS Code)','Sitemap|Outline of pages','User Flow|Path users take','Wireframe|Blueprint of layout','CMS|Manage content w/o coding','Domain Name|Site address','Hosting|Stores site files online','Element|e.g. `<p>`','Tag|`<tag>content</tag>`','Attribute|Extra info e.g. `src`','Self-Closing Tag|`br` `hr` `img`','URL|Web address','Hyperlink|Clickable link','Responsive Design|Fits any screen']},
+
+{id:'l2',t:'Lesson 2: Forms, Tables and Media',a:'html',
+p:['`<form>` is the container for all controls. `<input type="...">` can be text, password, radio, checkbox or submit.',
+'`radio` allows only one choice (same `name`), `checkbox` allows many, and `checked` sets a default selection.',
+'`<select>` + `<option>` make a dropdown for long lists, `<textarea>` is for multi-line text, and `<label for>` links a label to its field.',
+'`name` lets the server identify the data, `placeholder` shows a hint inside the field, and `required` blocks submission if the field is empty.',
+'Tables: `table` > `tr` > `th` or `td`. `caption` is the title, `colspan` merges columns, and `rowspan` merges rows.',
+'Media: `<video>` and `<audio>` (controls, autoplay, muted, loop), and `<iframe>` to embed YouTube.'],
+e:[
+{t:'A complete form',h:`<form>
+ <label for="n">Name</label>
+ <input type="text" id="n" name="name" placeholder="Your name" required><br>
+ <input type="password" name="pw" placeholder="Password"><br>
+ <input type="radio" name="g" checked> Male
+ <input type="radio" name="g"> Female<br>
+ <input type="checkbox" checked> Pizza
+ <input type="checkbox"> Soup<br>
+ <select name="c"><option>Egypt</option><option>KSA</option></select><br>
+ <textarea name="msg" rows="2" placeholder="Message"></textarea><br>
+ <button type="submit">Send</button>
+</form>`,n:'Try clicking Send with the name empty: required blocks the submission.'},
+{t:'Tables: caption, colspan and rowspan',c:`table{border-collapse:collapse}
+th,td{border:1px solid #888;padding:4px 10px}`,h:`<table>
+ <caption>Schedule</caption>
+ <tr><th>Day</th><th colspan="2">Classes</th></tr>
+ <tr><td rowspan="2">Sun</td><td>HTML</td><td>CSS</td></tr>
+ <tr><td>Lab</td><td>Quiz</td></tr>
+</table>`},
+{t:'Media: video, audio and iframe',h:`<video src="movie.mp4" controls width="220" autoplay muted></video>
+<audio src="song.mp3" controls loop></audio>
+<iframe src="https://www.youtube.com/embed/ID?autoplay=1&mute=1"
+ width="300" height="170"></iframe>`,r:'<video controls width="220"></video><br><audio controls></audio>',n:'Video and audio show playback buttons because of controls. The iframe embeds a YouTube player inside the page.'}
+],
+k:['Form|Container of controls','Input|Enter data','Textarea|Multi-line text','Radio|One choice','Checkbox|Many choices','Submit|Sends data to server','Label|Describes an input','table / tr|Table / row','td / th|Data cell / bold header cell','video / audio|Media with controls','Autoplay|Starts automatically','iframe|Embeds external content']},
+
+{id:'l3',t:'Lesson 3: Styling with CSS',a:'css',
+p:['`CSS` (Cascading Style Sheets) controls how a page looks. A rule is `selector { property: value; }`.',
+'Three ways to add CSS: External (`<link>` to a .css file), Internal (`<style>` in the head), and Inline (`style=""` on a single element).',
+'Colors: a name (red), HEX (`#FF0000`), `rgb()`, and `rgba()` (adds transparency).',
+'Backgrounds: color, image, repeat (repeat-x, repeat-y, no-repeat), attachment (scroll, fixed), position, size (cover, contain), and the shorthand.',
+'Font: family, size, weight, style, line-height (space between lines, not letters). Text: color, text-align, text-decoration, text-transform, letter-spacing, word-spacing.',
+'Box Model from inside out: Content, Padding, Border, Margin. `border-box` includes padding and border in the width; the default is `content-box`.',
+'`margin: 10px 20px` means top and bottom 10px, left and right 20px. `margin: 0 auto` centers an element horizontally.'],
+e:[
+{t:'A CSS rule: selector + declaration',c:`p{
+ color:blue;
+ font-size:18px;
+}`,h:`<p>Hello CSS</p>`},
+{t:'Three ways to add CSS',h:`<link rel="stylesheet" href="style.css"> <\!-- External -->
+<style>p{color:red}</style>            <\!-- Internal (in head) -->
+<p style="color:red">Inline</p>        <\!-- Inline -->`,r:'<p style="color:red">Inline: affects this element only</p>'},
+{t:'Colors: name, HEX, rgb and rgba',c:`div{padding:6px;margin:3px;color:#fff}
+.a{background:red}
+.b{background:#00A86B}
+.c{background:rgb(248,219,70);color:#000}
+.d{background:rgba(255,0,0,.5)}`,h:`<div class="a">name: red</div>
+<div class="b">HEX: #00A86B</div>
+<div class="c">rgb(248,219,70)</div>
+<div class="d">rgba(255,0,0,.5)</div>`},
+{t:'Background image: repeat, position and size',c:`.bg{
+ height:80px;
+ background-image:url("star.svg");
+ background-repeat:repeat-x;
+ background-position:center;
+ background-size:40px;
+}`,rc:`.bg{height:80px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='14' fill='%23e4572e'/%3E%3C/svg%3E") repeat-x center/40px}`,h:`<div class="bg"></div>`,n:'no-repeat stops the repeating, cover fills the box, contain keeps the proportions, and fixed keeps the background in place while scrolling.'},
+{t:'Font properties',c:`p{
+ font-family:Arial,sans-serif;
+ font-size:20px;
+ font-weight:bold;
+ font-style:italic;
+ line-height:1.5;
+}`,h:`<p>CSS makes text<br>look different.</p>`},
+{t:'Text properties',c:`p{
+ color:#c0392b;
+ text-align:center;
+ text-decoration:underline;
+ text-transform:uppercase;
+ letter-spacing:2px;
+ word-spacing:5px;
+}`,h:`<p>style your text</p>`},
+{t:'Box Model illustration',c:`.m{background:#f9cc9d;padding:16px}
+.b{background:#fddf8d;padding:10px;border:4px solid #333}
+.p{background:#c3d08b;padding:16px}
+.c{background:#8cb6c0;padding:8px;text-align:center}`,h:`<div class="m">margin
+ <div class="b">border
+  <div class="p">padding
+   <div class="c">content</div>
+  </div></div></div>`},
+{t:'box-sizing, margin:auto and border-radius',c:`div{
+ width:140px;padding:20px;
+ border:4px solid #333;
+ background:#cfe3ff;
+ margin:0 auto 10px;
+ border-radius:12px;
+}
+.bb{box-sizing:border-box;background:#d4f5d4}`,h:`<div>content-box = 188px</div>
+<div class="bb">border-box = 140px</div>`,n:'Both have width:140px, but content-box adds the padding and border (total 188px) while border-box stays at 140px.'}
+],
+k:['CSS|Style and layout language','Selector|Which element to style','Declaration|property: value pairs','Property|e.g. `color`','Value|e.g. `red`','External|Separate .css file','Internal|`<style>` in head','Inline|`style` attribute','Color Formats|Name, HEX, rgb, rgba','Box Model|Content, Padding, Border, Margin','box-sizing|content-box vs border-box','margin:auto|Centers horizontally']},
+
+{id:'l4',t:'Lesson 4: Classes, Display and Position',a:'css',
+p:['`.class` can be reused on many elements, while `#id` is unique (once per page).',
+'CSS lists: `list-style-type` (disc, square, decimal, upper-roman, none), `list-style-image`, and `list-style-position` (inside/outside).',
+'Gradients: `linear-gradient` blends colors along a straight line, `radial-gradient` spreads them in a circle from the center.',
+'`display`: block (new line, full width), inline (no new line), inline-block (no new line but accepts width and height), none (hides the element and removes its space).',
+'`float` pushes an element left or right so text wraps around it, and `clear` stops the wrapping and fixes footer problems.',
+'`position`: static (default), relative (offset from its original spot), absolute (relative to the nearest positioned ancestor), fixed (stays on screen), sticky (relative, then sticks at `top`).',
+'A higher `z-index` appears on top, and it only works together with `position`.'],
+e:[
+{t:'Class and ID',c:`.note{color:green}
+#main{color:red;font-weight:bold}`,h:`<p class="note">Class: reusable</p>
+<p class="note">Class again</p>
+<p id="main">ID: unique</p>`},
+{t:'Styling lists',c:`ul{list-style-type:square;list-style-position:inside}
+ol{list-style-type:upper-roman}`,h:`<ul><li>One</li><li>Two</li></ul>
+<ol><li>First</li><li>Second</li></ol>`},
+{t:'Linear and radial gradients',c:`div{height:50px;margin:4px 0}
+.l{background:linear-gradient(to right,#ff7e5f,#feb47e)}
+.r{background:radial-gradient(circle,#fff,#2b4fd8)}`,h:`<div class="l"></div>
+<div class="r"></div>`},
+{t:'The display property',c:`.b{display:block;background:#fcd}
+.i{display:inline;background:#cdf}
+.ib{display:inline-block;width:80px;height:40px;background:#cfc}
+.n{display:none}`,h:`<span class="b">block</span>
+<span class="i">inline</span><span class="i">inline</span>
+<span class="ib">inline-block</span>
+<span class="n">hidden</span>
+<span>after</span>`},
+{t:'float and clear',c:`.img{float:left;width:50px;height:50px;background:#e4572e;margin-right:10px}
+.foot{clear:both;background:#ddd;padding:4px}`,h:`<div class="img"></div>
+<p>Text wraps around the floated box like in a magazine layout.</p>
+<div class="foot">footer (clear:both)</div>`},
+{t:'relative and absolute',c:`.box{position:relative;height:90px;background:#e8eeff;padding:6px}
+.rel{position:relative;left:30px;top:6px;background:#9fe0a8;display:inline-block}
+.abs{position:absolute;top:8px;right:8px;background:#ffd24d}`,h:`<div class="box">
+ <div class="rel">relative</div>
+ <div class="abs">absolute</div>
+</div>`,n:'fixed pins the element to the screen itself, and sticky pins it once you scroll to the given top value.'},
+{t:'z-index (layer order)',c:`.box{position:relative;height:100px}
+.y{position:absolute;left:20px;top:10px;width:90px;height:60px;background:gold;z-index:1}
+.g{position:absolute;left:60px;top:35px;width:90px;height:60px;background:#6c9;z-index:0}`,h:`<div class="box">
+ <div class="y">z-index:1</div>
+ <div class="g">z-index:0</div>
+</div>`}
+],
+k:['Class|Reusable `.x`','ID|Unique `#x`','list-style-type|Bullet/number style','list-style-image|Custom marker','list-style-position|inside / outside','Linear Gradient|Straight color transition','Radial Gradient|From a center point','display|block, inline, inline-block, none','float|Left/right, text wraps','clear|Stops wrapping','position|static, relative, absolute, fixed, sticky','z-index|Stacking order']},
+
+{id:'l5',t:'Lesson 5: Debugging, Semantic Tags and Media Queries',a:'css',
+p:['Debugging steps: define the problem (expected vs. actual), isolate it, then use Developer Tools.',
+'Open the tools with `F12` or right-click then Inspect. You can inspect elements, view computed styles, toggle styles, modify styles and view the box model.',
+'Semantic tags: `header` `nav` `main` `article` `section` `aside` `footer`. Benefits: better SEO, better accessibility (screen readers) and clearer code. `div` is NOT semantic.',
+'Media Queries (CSS3) apply CSS only when a condition is met (width, height, orientation). They are the basis of Responsive Design.'],
+e:[
+{t:'Semantic layout',c:`header,nav,footer{background:#2b4fd8;color:#fff;padding:6px}
+nav{background:#4c6ef5}
+main{display:flex;gap:6px;margin:6px 0}
+article{flex:3;background:#dfe6ff;padding:10px}
+aside{flex:1;background:#ffe3b8;padding:10px}
+footer{background:#1c2333}`,h:`<header>header</header>
+<nav>nav</nav>
+<main>
+ <article>article</article>
+ <aside>aside</aside>
+</main>
+<footer>footer</footer>`},
+{t:'Media query',c:`.box{background:#2a9d8f;color:#fff;padding:12px}
+@media (max-width:600px){
+ .box{background:#e76f51}
+}`,h:`<div class="box">Resize the window</div>`,n:'Make the browser window narrower than 600px (or open the page on a phone) and the color changes from green to orange.'}
+],
+k:['Debugging|Finding and fixing CSS problems','Developer Tools|Inspect and edit live (F12)','Computed Styles|Final styles after calculation','Semantic HTML|Tags that describe meaning','Media Queries|Styles by device features','Responsive Design|Adapts to screen sizes','Accessibility|Usable by everyone','SEO|Search Engine Optimization','`<nav>`|Navigation section','`<article>`|Independent content']}
+];
+
+const QA=['H₂O uses|<sub>','Italic text|<i>','Highlight|<mark>','File starts with <!___>|DOCTYPE html','<hr> creates|horizontal line','<br> forces|line break','Largest heading|<h1>','Describes an image|alt','Link attribute|href','Opens new tab|_blank','Create a form|<form>','Password input|type="password"','Multi-line text|<textarea>','Radio buttons|only one selection','Pre-select checkbox|checked','Dropdown menu|<select>','name attribute|identifies data on submit','Forces a field|required','Merge rows|rowspan="2"','Merge columns|colspan="2"','Table row|<tr>','td vs th|td regular, th bold header','Table title|<caption>','Autoplay muted video|<video autoplay muted>','Loop audio|<audio loop>','Embed YouTube|<iframe>','CSS is for structure?|False (it is for style)','Inline style hits many elements?|False (one only)','fixed scrolls with page?|False (stays fixed)','margin = space content to border?|False (that is padding)','line-height = letter space?|False (line space)','Text color property|color','No repeat|background-repeat: no-repeat','Space between lines|line-height','margin:10px 20px|top/bottom 10, left/right 20','background-size: cover|stretches to fill','Default box-sizing|content-box','border-radius:50%|makes square circular','Scroll behavior|background-attachment','IDs used many times?|False (unique)','Linear = circular?|False (straight line)','z-index without position?|False (needs position)','Higher z-index|appears on top','display:none keeps space?|False (removes it)','Styles many elements|class','Unique per document|id','display: full width|block','Width/height but inline|inline-block','Stops wrapping|clear','Offsets from original spot|relative','Sticks on scroll|sticky','Stacking order|z-index','Dev tools purpose|inspect and debug CSS','Main navigation tag|<nav>','Media query checks|screen width etc.','First debug step|define the problem','Semantic + accessibility|screen readers','Open dev tools|F12 / Inspect','<aside> holds|sidebar content','NOT semantic|<div>','Dev tools edit live?|True (it can)','Semantic affects SEO?|True (it does)','Media queries only width?|False (also height, orientation)','Media queries introduced in|CSS3 (not CSS2)'];
+
+const $=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const hl=s=>esc(s).replace(/(&lt;\/?[\w!]+)/g,'<i class=t>$1</i>').replace(/(".*?")/g,'<i class=s>$1</i>');
+const md=s=>esc(s).replace(/`(.+?)`/g,'<code>$1</code>');
+const app=document.getElementById('app'),nav=document.getElementById('nav');
+S.forEach(s=>{
+ {const l=$('a','',s.t.split(':')[0]);l.href='#'+s.id;nav.append(l)}
+ const sec=$('section','sec');sec.id=s.id;sec.style.setProperty('--a','var(--'+s.a+')');
+ sec.append($('h2','',s.t),$('ul','pts',s.p.map(x=>'<li>'+md(x)+'</li>').join('')));
+ s.e.forEach(e=>{
+  const c=$('div','ex'),g=$('div','g'),pre=$('pre'),res=$('div','res'),box=$('div');
+  pre.dir='ltr';pre.innerHTML=hl((e.c?'/* CSS */\n'+e.c+'\n\n/* HTML */\n':'')+e.h);
+  const r=box.attachShadow({mode:'open'});
+  r.innerHTML='<style>:host{display:block;direction:ltr;background:#fff;color:#1c2333;padding:28px 12px 12px;font:15px/1.6 Cairo,sans-serif}'+(e.rc||e.c||'')+'</style>'+(e.r||e.h);
+  r.addEventListener('submit',v=>v.preventDefault());
+  r.addEventListener('click',v=>{if(v.target.closest('a'))v.preventDefault()});
+  res.append(box);g.append(pre,res);c.append($('h3','',e.t),g);
+  if(e.n)c.append($('p','n',e.n));
+  sec.append(c);
+ });
+ const d=$('details','',"<summary>Key terms: "+s.t.split(':')[0]+"</summary>");
+ const k=$('div','k',s.k.map(x=>{const[a,b]=x.split('|');return'<div><b>'+md(a)+'</b>: '+md(b)+'</div>'}).join(''));
+ d.append(k);sec.append(d);app.append(sec);
+});
+{const l=$('a','','Review Questions');l.href='#qa';nav.append(l)}
+const q=$('section','sec');q.id='qa';q.style.setProperty('--a','var(--css)');
+q.append($('h2','','Review Questions and Answers'),$('p','n','Click an answer to reveal it. Answers stay blurred until you click.'),
+ $('div','qa',QA.map(x=>{const[a,b]=x.split('|');return'<div><span>'+esc(a)+'</span><span class="a" tabindex="0" role="button">'+esc(b)+'</span></div>'}).join('')));
+app.append(q);
+q.addEventListener('click',e=>{if(e.target.classList.contains('a'))e.target.classList.toggle('on')});
+q.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('a')){e.preventDefault();e.target.classList.toggle('on')}});
+</script>
+</body>
+</html>
